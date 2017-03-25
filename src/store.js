@@ -6,7 +6,14 @@ let comments = [
 ]
 
 function commentReducer(state=[],action) {
-  return state;
+  console.log(state,action);
+  switch (action.type) {
+    case 'ADD_COMMENT':
+      console.log([...state,action.comment]);
+      return [...state,action.comment]
+    default:
+      return state;
+  }
 }
 
 let store = createStore(commentReducer,comments)

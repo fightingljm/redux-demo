@@ -10,9 +10,11 @@ class CommentBox extends React.Component {
   }
   handleSubmit(e){
     e.preventDefault();
-    // this.state.comments.push(this.refs.content.value);
-    // this.setState({comments:this.state.comments});
+    console.log(store.getState());
+    store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value});
+    console.log(store.getState());
     this.refs.commentForm.reset();
+    this.setState({comments:store.getState()})
   }
   render(){
     let  commentList = this.state.comments.map(item => {
