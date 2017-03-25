@@ -12,7 +12,7 @@ body {
 
 .top {
   height: 600px;
-  background-color: rgb(0, 188, 212);;
+  background-color: rgb(0, 188, 212);
 }
 .bottom {
   height: 600px;
@@ -44,4 +44,38 @@ body {
 .comment{
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.comment-box {
+  position: relative;
+}
+.comment-box .comment-form {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+}
+
+.comment-form .input {
+  width: 300px;
+  border: none;
+  outline: none;
+}
+.underline {
+  position: absolute;
+  bottom: 20px;
+  width: 300px;
+  left: 16px;
+  border-top: none;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+.submit-btn {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(0, 188, 212);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
