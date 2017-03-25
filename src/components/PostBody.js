@@ -9,8 +9,11 @@ class PostBody extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className="post-body">
         PostBody
+        <div className="comment-num">
+          24
+        </div>
       </div>
     )
   }
