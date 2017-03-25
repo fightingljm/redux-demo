@@ -1,10 +1,11 @@
 import React from 'react';
+import store from '../store';
 
 class PostBody extends React.Component {
   constructor() {
     super();
     this.state={
-
+      num:store.getState().length
     }
   }
   render(){
@@ -12,7 +13,7 @@ class PostBody extends React.Component {
       <div className="post-body">
         PostBody
         <div className="comment-num">
-          24
+          {this.state.num} 评论
         </div>
       </div>
     )
