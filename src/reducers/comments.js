@@ -1,12 +1,18 @@
-function commentReducer(state=[],action) {
-  console.log(state,action);
+function postComments(state=[],action) {
   switch (action.type) {
     case 'ADD_COMMENT':
-      console.log([...state,action.comment]);
       return [...state,action.comment]
     default:
       return state;
   }
+}
+function commentReducer(state=[],action) {
+  if(typeof action.postId !== 'undefined'){
+    return{
+      [action.postId]:postComments(state[action.postId],action)
+    }
+  }
+  return state
 }
 
 export default commentReducer;

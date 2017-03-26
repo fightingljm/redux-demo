@@ -11,7 +11,7 @@ class CommentBox extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     console.log(store.getState());
-    store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value});
+    store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value,postId:this.props.id});
     console.log(store.getState());
     this.refs.commentForm.reset();
     this.setState({comments:store.getState().comments[this.props.id]})
