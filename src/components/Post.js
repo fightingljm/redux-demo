@@ -8,14 +8,15 @@ import store from '../store';
 
 class Post extends React.Component {
   render(){
+    // console.log('idddd',this.props.params.postId);
     return(
       <Provider store={store}>
         <div>
           <div className="top  clearfix">
-            <PostBody />
+            <PostBody id={this.props.params.postId} />
           </div>
           <div className="bottom clearfix">
-            <CommentBox />
+            <CommentBox id={this.props.params.postId} />
           </div>
         </div>
       </Provider>

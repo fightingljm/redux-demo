@@ -2,10 +2,10 @@ import React from 'react';
 import store from '../store';
 
 class CommentBox extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
-      comments:store.getState().comments
+      comments:store.getState().comments[this.props.id]
     }
   }
   handleSubmit(e){
@@ -14,9 +14,10 @@ class CommentBox extends React.Component {
     store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value});
     console.log(store.getState());
     this.refs.commentForm.reset();
-    this.setState({comments:store.getState().comments})
+    this.setState({comments:store.getState().comments[this.props.id]})
   }
   render(){
+    console.log(this.props.id);
     let  commentList = this.state.comments.map(item => {
       return(
         <div key={Math.random()} className="comment">{item}</div>

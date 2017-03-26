@@ -7,7 +7,7 @@ class PostBody extends React.Component {
       <div className="post-body">
         PostBody
         <div className="comment-num">
-          {this.props.comments.length} 评论
+          {this.props.comments[this.props.id].length} 评论
         </div>
       </div>
     )

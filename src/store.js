@@ -1,10 +1,10 @@
 import {createStore} from 'redux';
 import rootReducer from './reducers'
 
-const comments = [
-  "hello1",
-  "hello2"
-]
+const comments = {
+  1:["hello1","hello2"],
+  2:["hello1111","hello2222"]
+}
 
 const posts = [
   {
