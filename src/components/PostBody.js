@@ -10,7 +10,9 @@ class PostBody extends React.Component {
     console.log(this.props.posts[this.props.id -1 ].likes);
     return(
       <div className="post-body">
-        PostBody
+        <div className="title">
+          {this.props.posts[this.props.id -1 ].title}
+        </div>
         <div className="love-num num" onClick={this.handleClick.bind(this)}>
           {this.props.posts[this.props.id -1 ].likes} 喜欢
         </div>
