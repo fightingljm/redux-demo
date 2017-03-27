@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router'
+
 import {connect} from 'react-redux';
 import store from '../store'
 
@@ -10,9 +12,9 @@ class PostBody extends React.Component {
     console.log(this.props.posts[this.props.id -1 ].likes);
     return(
       <div className="post-body">
-        <div className="title">
+        <Link to={`/posts/${this.props.id}`} className="title">
           {this.props.posts[this.props.id -1 ].title}
-        </div>
+        </Link>
         <div className="love-num num" onClick={this.handleClick.bind(this)}>
           {this.props.posts[this.props.id -1 ].likes} 喜欢
         </div>
