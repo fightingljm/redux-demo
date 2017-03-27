@@ -6,7 +6,10 @@ class PostBody extends React.Component {
     return(
       <div className="post-body">
         PostBody
-        <div className="comment-num">
+        <div className="love-num num">
+          21 喜欢
+        </div>
+        <div className="comment-num num">
           {this.props.comments[this.props.id].length} 评论
         </div>
       </div>

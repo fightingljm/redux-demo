@@ -9,6 +9,7 @@ function postComments(state=[],action) {
 function commentReducer(state=[],action) {
   if(typeof action.postId !== 'undefined'){
     return{
+      ...state,
       [action.postId]:postComments(state[action.postId],action)
     }
   }
