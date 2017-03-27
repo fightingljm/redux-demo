@@ -44,6 +44,7 @@ body {
 }
 .post-body .love-num{
   right: 120px;
+  cursor: pointer;
 }
 .comment{
   padding: 10px;
