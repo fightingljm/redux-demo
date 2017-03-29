@@ -1,5 +1,6 @@
-import {createStore} from 'redux';
-import rootReducer from './reducers'
+import {createStore,applyMiddleware,compose} from 'redux';
+import rootReducer from './reducers';
+import thunk from 'redux-thunk'
 
 const comments = {
   1:["hello1","hello2"],
@@ -24,6 +25,6 @@ const defaultState = {
   comments
 }
 
-let store = createStore(rootReducer,defaultState)
+let store = createStore(rootReducer,defaultState,compose(applyMiddleware(thunk)))
 
 export default store;
