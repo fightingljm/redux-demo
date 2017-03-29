@@ -1,11 +1,16 @@
 import React from 'react';
-import store from '../store';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {addComment} from '../actions/commentActions'
 
 class CommentBox extends React.Component {
   handleSubmit(e){
     e.preventDefault();
-    store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value,postId:this.props.id});
+    // store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value,postId:this.props.id});
+    let data = {
+      comment:this.refs.content.value,
+      postId:this.props.id
+    }
+    this.props.addComment(data)
     this.refs.commentForm.reset();
   }
   render(){
@@ -28,7 +33,11 @@ class CommentBox extends React.Component {
     )
   }
 }
+CommentBox.propTypes = {
+  addComment:React.PropTypes.func.isRequired,
+  comments:React.PropTypes.object.isRequired
+}
 const mapStateToProps = (state) => ({
   comments:state.comments
 })
-export default connect(mapStateToProps)(CommentBox);
+export default connect(mapStateToProps,{addComment})(CommentBox);
