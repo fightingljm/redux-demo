@@ -7,7 +7,7 @@ class CommentBox extends React.Component {
     e.preventDefault();
     // store.dispatch({type:'ADD_COMMENT',comment:this.refs.content.value,postId:this.props.id});
     let data = {
-      comment:this.refs.content.value,
+      commentBody:this.refs.content.value,
       postId:this.props.id
     }
     this.props.addComment(data)
