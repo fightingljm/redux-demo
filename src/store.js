@@ -3,7 +3,8 @@ import rootReducer from './reducers';
 import thunk from 'redux-thunk'
 
 const comments = {
-  
+  1:[],
+  2:[]
 }
 
 const posts = [
