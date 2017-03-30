@@ -18,12 +18,12 @@ class CommentBox extends React.Component {
   }
   render(){
     // console.log(this.props.id);
-    // let  commentList = this.props.comments[this.props.id].map(item => {
-    //   return(
-    //     <div key={Math.random()} className="comment">{item}</div>
-    //   )
-    // })
-    let  commentList = JSON.stringify(this.props.comments)
+    let  commentList = this.props.comments[this.props.id].map(item => {
+      return(
+        <div key={Math.random()} className="comment">{item}</div>
+      )
+    })
+    // let  commentList = JSON.stringify(this.props.comments)
     return(
       <div className="comment-box">
         CommentBox
