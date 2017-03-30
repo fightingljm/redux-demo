@@ -19,7 +19,8 @@ class PostBody extends React.Component {
           {this.props.posts[this.props.id -1 ].likes} 喜欢
         </div>
         <div className="comment-num num">
-          {this.props.comments[this.props.id].length} 评论
+          {/* {this.props.comments[this.props.id].length} 评论 */}
+          {JSON.stringify(this.props.comments).length} 评论
         </div>
       </div>
     )

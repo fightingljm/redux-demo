@@ -14,3 +14,11 @@ export function addComment(data) {
       .then(dispatch(_addComment(data)))
   }
 }
+
+export function fetchComments() {
+  return dispatch => {
+    axios.get('http://redux-hello.haoduoshipin.com/comments')
+      // .then(res => console.log(res))
+      .then(res => {dispatch({type:'LOAD_COMMENTS',comments:res.data.comments})})
+  }
+}

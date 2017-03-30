@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addComment} from '../actions/commentActions'
+import {addComment,fetchComments} from '../actions/commentActions'
 
 class CommentBox extends React.Component {
   handleSubmit(e){
@@ -13,13 +13,17 @@ class CommentBox extends React.Component {
     this.props.addComment(data)
     this.refs.commentForm.reset();
   }
+  componentWillMount(){
+    this.props.fetchComments();
+  }
   render(){
-    console.log(this.props.id);
-    let  commentList = this.props.comments[this.props.id].map(item => {
-      return(
-        <div key={Math.random()} className="comment">{item}</div>
-      )
-    })
+    // console.log(this.props.id);
+    // let  commentList = this.props.comments[this.props.id].map(item => {
+    //   return(
+    //     <div key={Math.random()} className="comment">{item}</div>
+    //   )
+    // })
+    let  commentList = JSON.stringify(this.props.comments)
     return(
       <div className="comment-box">
         CommentBox
@@ -35,9 +39,10 @@ class CommentBox extends React.Component {
 }
 CommentBox.propTypes = {
   addComment:React.PropTypes.func.isRequired,
+  fetchComments:React.PropTypes.func.isRequired,
   comments:React.PropTypes.object.isRequired
 }
 const mapStateToProps = (state) => ({
   comments:state.comments
 })
-export default connect(mapStateToProps,{addComment})(CommentBox);
+export default connect(mapStateToProps,{addComment,fetchComments})(CommentBox);
