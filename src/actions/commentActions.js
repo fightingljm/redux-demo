@@ -3,7 +3,7 @@ import axios from 'axios'
 export function _addComment(data) {
   return {
     type:'ADD_COMMENT',
-    commentBody:data.comment,
+    comment:data.commentBody,
     postId:data.postId
   }
 }
